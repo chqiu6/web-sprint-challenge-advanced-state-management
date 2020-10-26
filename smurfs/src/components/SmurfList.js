@@ -15,11 +15,12 @@ const SmurfList = props => {
     return(
         <div>
             {
-                props.smurfs.map((item) => (
-                    <div className = "add-smurf-list">
+                props.smurfs.map((item,id) => (
+                    <div key = {item.id} className = "add-smurf-list ">
                     <p>{item.name}</p>
                     <p>{item.age}</p>
                     <p>{item.height}</p>
+                    <p>testing id : {item.id}</p>
                     </div>
                 ))
             }

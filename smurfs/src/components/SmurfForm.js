@@ -5,14 +5,20 @@ import {postSmurfs} from "../actions/index";
 
 const SmurfForm = props => {
     const [addSmurf, setAddSmurf] = useState({
-        id : "",
+        // id : "",
         name : "",
         age : "",
         height : ""
     })
 
+    // const resetSmurf = {
+    //     name: "",
+    //     age: "",
+    //     height: ""
+    // }
+
    const handleChange = e => {
-       setAddSmurf({...addSmurf, [e.target.name] : e.target.value , id:Date.now()});
+       setAddSmurf({...addSmurf, [e.target.name] : e.target.value, id: Date.now()});
        console.log("Handle Change check :", e.target.value);
     }
 
@@ -25,16 +31,19 @@ const SmurfForm = props => {
         //     height : addSmurf.height
         // };
         // const addSmurfId = newSmurf => {
-        //     const addNewSmurf = {
-        //         id : Date.now(),
-        //         name : newSmurf.name,
-        //         age : newSmurf.age,
-        //         height : newSmurf.height
-        //     };
+            // const addNewSmurf = {
+                // id : Date.now(),
+            //     name : addSmurf.name,
+            //     age : addSmurf.age,
+            //     height : addSmurf.height
+            // };
             // setAddSmurf({...addSmurf, addNewSmurf});
             props.postSmurfs(addSmurf);
         // }
         console.log("checking addSmurf data : ",addSmurf);
+        
+        // setAddSmurf({});
+        // console.log("reset check :" ,addSmurf);
     }
 
     return(
